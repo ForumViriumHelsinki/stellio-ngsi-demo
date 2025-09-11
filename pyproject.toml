@@ -1,0 +1,44 @@
+[project]
+name = "stellio-exploration"
+description = "Stand-alone scripts for Stellio data exploration"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+version = "0.1.0"
+
+dependencies = [
+    "httpx>=0.28.1",
+]
+
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Internal",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+]
+dev = [
+    "ruff",
+    "pre-commit",
+]
+
+[tool.ruff]
+line-length = 119
+target-version = "py313"
+exclude = ["docs/*.py"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.ruff.isort]
+combine-as-imports = true
+lines-after-imports = 2
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
